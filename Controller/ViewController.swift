@@ -19,6 +19,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchUser(_ sender: Any) {
+        if let userName:String = txtUserName.text{
+            
+            GithubUserAPI.getUsers(userName: userName) { (projects) in
+                print(projects)
+            }
+        }
+        
+        
     }
     
 }
